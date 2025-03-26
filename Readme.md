@@ -15,3 +15,8 @@
         a. Open Terminal/CMD window
         b. Navigate to TestAutomation Project
         c. Run npm install csv-parse
+    7. Clone project from git repository
+        https://github.com/Damo2205/TestAutomation_Playwright.git
+        
+    
+
