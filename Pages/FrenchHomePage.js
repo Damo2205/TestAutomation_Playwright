@@ -26,7 +26,7 @@ class FrenchHomepage {
     await handleCookiesPopup(this.page, this.acceptCookiesButton);
   }
 
-  // Click on Cartes Premium link 
+  // Click on Cartes Premium link and verify text visibility
   async clickCartesPremium() {
     await waitForSelectorAndClick(this.page,this.cartesPremium);
     await waitForSelectorAndCheckVisibility(this.page,this.cartesPremium); 
