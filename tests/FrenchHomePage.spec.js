@@ -1,5 +1,6 @@
 const { test, expect } = require('@playwright/test');
-const FrenchHomepage = require('../pages/FrenchHomepage');
+const FrenchHomepage = require('../Pages/frenchHomePage');
+const { waitForTimeout } = require('../Utilities/reusableMethods');
 
 test.describe('French Homepage Tests', () => {
   test('should navigate to FR Homepage and click on Cartes American Express', async ({ page }) => {

@@ -1,6 +1,7 @@
 // Include Playwright Module
 const { expect } = require('@playwright/test');
 const dotenv = require('dotenv');
+const { handleCookiesPopup, waitForTimeout, isVisible, waitForSelectorAndCheckVisibility, clickElementIfVisible, waitForSelectorAndClick } = require('../Utilities/reusableMethods');
 
 // Load the .env file from the Config folder
 dotenv.config({ path: './Config/.env' });
@@ -14,27 +15,21 @@ class FrenchHomepage {
     this.page = page;
 
     // Define locators and URLs
-    this.extendedURL = 'fr-fr/?inav=NavLogo'; // Extended URL
-    this.cartesPremium = 'text=Cartes Premium'; // Selector for the link
-    this.acceptCookiesButton = 'button:has-text("Accepter les cookies")'; // Selector for the "Accept Cookies" button
+    this.extendedURL = 'fr-fr/?inav=NavLogo'; // Extended URL for the French Homepage
+    this.cartesPremium = 'text=Cartes Premium'; // Cartes Premium locator link
+    this.acceptCookiesButton = 'button:has-text("Tout Accepter")'; // "Accept Cookies" button locator
   }
 
   //Navigate to  Homepage
   async navigate() {
     await this.page.goto(process.env.BASE_URL + this.extendedURL);
+    await handleCookiesPopup(this.page, this.acceptCookiesButton);
   }
-
-//Handle the cookies popup
-async handleCookiesPopup() {
-  if (await this.page.isVisible(this.acceptCookiesButton)) {
-    await this.page.click(this.acceptCookiesButton);
-  }
-}
 
   // Click on Cartes Premium link 
   async clickCartesPremium() {
-    await this.page.click(this.cartesPremium);
-    await this.page.isVisible(this.cartesPremium);
+    await waitForSelectorAndClick(this.page,this.cartesPremium);
+    await waitForSelectorAndCheckVisibility(this.page,this.cartesPremium); 
   }
 }
 
