@@ -12,7 +12,7 @@
     "@types/node": "^22.13.13"
   },
   "dependencies": {
-    "csv-parse": "^5.6.0",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.4.7"
   }
 }

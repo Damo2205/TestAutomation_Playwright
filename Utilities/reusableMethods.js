@@ -87,6 +87,7 @@ export async function typeText(page, selector, text) {
  */
 export async function handleCookiesPopup(page, selector) {
     try {
+        await waitForTimeout(2000); // Wait for 2 seconds before checking for the cookies popup
         if (await page.isVisible(selector)) {
             await page.click(selector);
         }

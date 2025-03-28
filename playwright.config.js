@@ -28,6 +28,9 @@ export default defineConfig({
   use: {
     // Flag to enable headed mode. */
     headless: false,
+    args: ['--start-maximized'],
+    viewport: null,
+    // Set the default timeout to 30 seconds. */
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
