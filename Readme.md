@@ -14,9 +14,13 @@
     6. Add CSV Package
         a. Open Terminal/CMD window
         b. Navigate to TestAutomation Project
-        c. Run npm install csv-parse
+        c. Run npm install csv-parser
     7. Clone project from git repository
         https://github.com/Damo2205/TestAutomation_Playwright.git
-        
+        a. checkout develop branch
+        b. update or add new code in develop branch
+        c. commit & push code changes to develop branch after successful execution.
+        d. merge develop branch to main branch
+
     
 
